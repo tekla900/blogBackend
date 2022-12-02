@@ -1,10 +1,10 @@
+require('dotenv').config()
 const http = require('http')
 const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const Blog = require('./models/blog')
-
 
 
 app.use(cors())
@@ -49,7 +49,7 @@ app.delete('/api/blogs/:id', (request, response) => {
       .catch(error => console.log(error))
 })
 
-const PORT = process.env.PORT || 3003
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
